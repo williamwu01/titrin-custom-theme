@@ -4,7 +4,7 @@
 	position: relative;
 }
 
-/* Optional: If you want to use a custom overlay */
+/* custom overlay for UIUX text */
 .wp-block-cover::before {
 	content: '';
 	position: absolute;
@@ -55,10 +55,10 @@
 	color: #fff;
 }
 
-.wp-block-buttons .wp-block-button__link {
+/* .wp-block-buttons .wp-block-button__link {
 	padding: 0.75rem 1.5rem;
 	border-radius: 5px;
 	background-color: #f5c518;
 	color: #000;
 	font-weight: bold;
-}
+} */
