@@ -160,6 +160,48 @@ function titrin_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'titrin_scripts' );
+function titrin_register_services_post_type() {
+	$labels = array(
+			'name'                  => _x( 'Services', 'Post type general name', 'titrin' ),
+			'singular_name'         => _x( 'Service', 'Post type singular name', 'titrin' ),
+			'menu_name'             => _x( 'Services', 'Admin Menu text', 'titrin' ),
+			'name_admin_bar'        => _x( 'Service', 'Add New on Toolbar', 'titrin' ),
+			'add_new'               => __( 'Add New', 'titrin' ),
+			'add_new_item'          => __( 'Add New Service', 'titrin' ),
+			'new_item'              => __( 'New Service', 'titrin' ),
+			'edit_item'             => __( 'Edit Service', 'titrin' ),
+			'view_item'             => __( 'View Service', 'titrin' ),
+			'all_items'             => __( 'All Services', 'titrin' ),
+			'search_items'          => __( 'Search Services', 'titrin' ),
+			'parent_item_colon'     => __( 'Parent Services:', 'titrin' ),
+			'not_found'             => __( 'No services found.', 'titrin' ),
+			'not_found_in_trash'    => __( 'No services found in Trash.', 'titrin' ),
+			'featured_image'        => __( 'Service Featured Image', 'titrin' ),
+			'set_featured_image'    => __( 'Set featured image', 'titrin' ),
+			'remove_featured_image' => __( 'Remove featured image', 'titrin' ),
+			'use_featured_image'    => __( 'Use as featured image', 'titrin' ),
+	);
+
+	$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'service' ),
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'menu_position'      => 5,
+			'menu_icon'          => 'dashicons-hammer',
+			'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+			'show_in_rest'       => true,
+	);
+
+	register_post_type( 'service', $args );
+}
+add_action( 'init', 'titrin_register_services_post_type' );
 
 /**
  * Implement the Custom Header feature.
