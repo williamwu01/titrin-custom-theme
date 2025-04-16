@@ -967,8 +967,8 @@ textarea {
 # Header Styles
 --------------------------------------------------------------*/
 .site-header {
-	background-color: #1a3c34; /* Dark green background, adjust based on the exact color */
-	padding: 1rem 2rem;
+	background-color: #1c6c2b; /* Dark green background, adjust based on the exact color */
+	/* padding: 1rem 2rem; */
 	position: fixed;
 	top: 0;
 	left: 0;

@@ -10,10 +10,53 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
 	z-index: 1;
+}
+
+.page-id-2 .wp-block-cover__inner-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	width: 310px;
+}
+
+.page-id-2 .wp-block-cover__inner-container > p > em {
+	font-size: 1rem;
+	line-height: 2;
+	color: white;
+}
+
+@media (min-width: 1024px) {
+	.page-id-2 .happy {
+		justify-content: left;
+		padding-left: 6%;
+	}
+
+	.page-id-2 .wp-block-cover__inner-container {
+		width: 450px;
+		align-items: flex-start;
+	}
+
+	.wp-block-cover::before {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1750px) {
+	.page-id-2 .happy {
+		justify-content: left;
+		padding-left: 8%;
+	}
+
+	.page-id-2 .wp-block-cover__inner-container {
+		width: 700px;
+		align-items: flex-start;
+	}
 }
 
 .wp-block-cover video {
@@ -62,3 +105,25 @@
 	color: #000;
 	font-weight: bold;
 } */
+
+/* desciption text and cta section */
+.front-page-content .wp-block-group.desc-section {
+	background-color: #174f21;
+	color: white;
+	padding: 2rem 0;
+}
+
+/* mission section  */
+.front-page-content .wp-block-group.mission-section {
+	background-color: black;
+	color: white;
+	padding: 2rem 0;
+}
+.mission-a-link > a {
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+.mission-a-link > a:hover {
+	color: grey;
+}
