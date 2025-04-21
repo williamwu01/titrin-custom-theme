@@ -533,12 +533,12 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #f6f6f6;
 }
 
-a:visited {
+/* a:visited {
 	color: #800080;
-}
+} */
 
 a:hover,
 a:focus,
@@ -966,51 +966,147 @@ textarea {
 /*--------------------------------------------------------------
 # Header Styles
 --------------------------------------------------------------*/
+/* Fixed Header */
+
 .site-header {
-	background-color: #1c6c2b; /* Dark green background, adjust based on the exact color */
-	/* padding: 1rem 2rem; */
+	background-color: #1c6c2b;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 60px;
 	z-index: 1000;
 }
 
+/* Container Flex Setup */
 .header-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	max-width: 1200px;
+	/* max-width: 1200px; */
 	margin: 0 auto;
+	/* padding: 0 20px; */
+	/* height: 100%; */
 }
 
+/* Logo & Title */
 .site-branding {
 	flex: 0 0 auto;
+	margin-right: 20px;
 }
-
 .site-branding .custom-logo {
-	max-height: 60px; /* Adjusted for better logo size */
+	max-height: 60px;
 	width: auto;
 }
-
 .site-title {
 	margin: 0;
 	font-size: 1.5rem;
 	line-height: 1;
 }
-
 .site-title a {
 	color: #fff;
 	text-decoration: none;
 }
-
 .site-description {
 	margin: 0;
 	color: #ddd;
 	font-size: 0.9rem;
-	display: none; /* Hide since logo is present */
+	display: none;
 }
 
+/* Navigation Wrapper */
 .main-navigation {
-	flex: 0 0 auto;
+	flex: 1;
+	position: relative;
+	width: auto;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+	display: none;
+	background: none;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+}
+
+/* Dropdown Menu Styles */
+.main-navigation ul {
+	display: none;
+	position: fixed;
+	top: 60px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-color: #1c6c2b;
+	flex-direction: column;
+	margin: 0;
+	padding: 25px;
+	list-style: none;
+	z-index: 999;
+}
+
+.main-navigation ul li {
+	padding: 5px 0;
+	text-align: center;
+}
+
+/* Show Menu When Toggled */
+.main-navigation.toggled ul {
+	display: flex;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+	.menu-toggle {
+		display: flex;
+	}
+
+	.main-navigation ul {
+		top: 60px;
+	}
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+	.site-header {
+		height: 69px;
+	}
+
+	.main-navigation {
+		width: auto;
+		flex: 1;
+	}
+
+	.main-navigation ul {
+		display: flex !important;
+		position: static;
+		flex-direction: row;
+		background: none;
+		gap: 60px;
+		justify-content: center;
+		width: 100%;
+	}
+	.menu-toggle {
+		display: none;
+	}
+}
+
+/* Default hamburger icon */
+.menu-toggle .hamburger-icon {
+	display: inline-block;
+	font-size: 3rem;
+}
+/* switch this to html embeding to fix alignment issues */
+.menu-toggle[aria-expanded='false'] .hamburger-icon::before {
+	content: '\2630'; /* ☰ - Hamburger */
+}
+
+.menu-toggle[aria-expanded='true'] .hamburger-icon::before {
+	content: '\00d7'; /* × - Close */
 }
