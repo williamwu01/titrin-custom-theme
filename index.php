@@ -1,13 +1,6 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Main template file for Blog Page as Posts Page
  *
  * @package titrin
  */
@@ -15,43 +8,58 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+	<?php
+	// Display cover image and title from the Blog page itself
+	if ( is_home() && ! is_front_page() ) :
+		$blog_page_id = get_option('page_for_posts');
+		$cover_image = get_the_post_thumbnail_url($blog_page_id, 'full');
+		$blog_title = get_the_title($blog_page_id);
+		$blog_content = get_post_field('post_content', $blog_page_id);
 		?>
+		<section class="blog-cover">
+			<?php if ( $cover_image ) : ?>
+				<div class="cover-image" style="background-image: url('<?php echo esc_url($cover_image); ?>');">
+					<div class="overlay">
+						<h1 class="cover-title"><?php echo esc_html($blog_title); ?></h1>
+					</div>
+				</div>
+			<?php endif; ?>
+			<div class="cover-content">
+				<?php echo apply_filters('the_content', $blog_content); ?>
+			</div>
+		</section>
+	<?php endif; ?>
 
-	</main><!-- #main -->
+	<section class="blog-posts-grid">
+		<?php if ( have_posts() ) : ?>
+			<div class="posts-wrapper">
+				<?php while ( have_posts() ) : the_post(); ?>
+					<article class="post-card">
+						<a href="<?php the_permalink(); ?>">
+							<?php if ( has_post_thumbnail() ) : ?>
+								<div class="post-thumbnail">
+									<?php the_post_thumbnail('medium'); ?>
+								</div>
+							<?php endif; ?>
+							<div class="post-content">
+								<h2 class="post-title"><?php the_title(); ?></h2>
+								<p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+							</div>
+						</a>
+					</article>
+				<?php endwhile; ?>
+			</div>
+			<?php the_posts_navigation(); ?>
+		<?php else : ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+		<?php endif; ?>
+	</section>
+
+</main>
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
+?>

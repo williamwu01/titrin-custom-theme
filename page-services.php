@@ -8,12 +8,12 @@
 get_header(); ?>
 
 <div class="services-page">
-    <section class="services-hero">
+    <!-- <section class="services-hero">
         <div class="hero-content">
             <h1 class="hero-title"><?php the_title(); ?></h1>
             <p class="hero-description">Discover our range of services to support sustainable agriculture and land management at Titrin AgriSoil Solutions.</p>
         </div>
-    </section><!-- .services-hero -->
+    </section>.services-hero -->
 
     <div class="services-intro">
         <?php

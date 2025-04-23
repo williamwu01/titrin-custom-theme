@@ -744,10 +744,10 @@ textarea {
 	display: block;
 }
 
-.post,
+/* .post,
 .page {
 	margin: 0 0 1.5em;
-}
+} */
 
 .updated:not(.published) {
 	display: none;
@@ -798,6 +798,16 @@ textarea {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+	background-color: black;
+	padding: 0.12rem;
+}
+
+@media (min-width: 769px) {
+	.custom-logo-link {
+		display: inline-block;
+		padding: 0;
+		background-color: transparent;
+	}
 }
 
 /* Captions
@@ -974,7 +984,7 @@ textarea {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 60px;
+	height: 70px;
 	z-index: 1000;
 }
 
@@ -1035,6 +1045,42 @@ textarea {
 	margin-left: auto;
 }
 
+/* Default hamburger icon */
+.menu-toggle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 6px;
+	width: 58px;
+	height: 40px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	z-index: 1001;
+}
+
+.hamburger-icon {
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: #333;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	border-radius: 2px;
+}
+
+/* Animate into "X" when aria-expanded is true */
+.menu-toggle[aria-expanded='true'] .hamburger-icon:nth-child(1) {
+	transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded='true'] .hamburger-icon:nth-child(2) {
+	opacity: 0;
+}
+
+.menu-toggle[aria-expanded='true'] .hamburger-icon:nth-child(3) {
+	transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Dropdown Menu Styles */
 .main-navigation ul {
 	display: none;
@@ -1068,7 +1114,7 @@ textarea {
 	}
 
 	.main-navigation ul {
-		top: 60px;
+		top: 70px;
 	}
 }
 
@@ -1097,16 +1143,13 @@ textarea {
 	}
 }
 
-/* Default hamburger icon */
-.menu-toggle .hamburger-icon {
-	display: inline-block;
-	font-size: 3rem;
-}
-/* switch this to html embeding to fix alignment issues */
-.menu-toggle[aria-expanded='false'] .hamburger-icon::before {
-	content: '\2630'; /* ☰ - Hamburger */
+.site-footer {
+	background-color: #174f21;
+	color: white;
+	padding: 2rem 0;
 }
 
-.menu-toggle[aria-expanded='true'] .hamburger-icon::before {
-	content: '\00d7'; /* × - Close */
+/* hide all page titles */
+.page .entry-title {
+	display: none;
 }

@@ -167,6 +167,13 @@ function titrin_scripts() {
 		}
 }
 add_action( 'wp_enqueue_scripts', 'titrin_scripts' );
+function titrin_enqueue_blog_styles() {
+	if ( is_home() && ! is_front_page() ) {
+		wp_enqueue_style( 'titrin-blog-page', get_template_directory_uri() . '/css/blog-page.css', array(), '1.0' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'titrin_enqueue_blog_styles' );
+
 function titrin_register_services_post_type() {
 	$labels = array(
 			'name'                  => _x( 'Services', 'Post type general name', 'titrin' ),
