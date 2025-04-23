@@ -71,6 +71,7 @@
 	position: relative;
 }
 
+/* mission seciton  */
 .wp-block-columns {
 	display: flex;
 	align-items: center;
@@ -176,39 +177,84 @@
 	line-height: 2;
 }
 
-/* service section */
+/* Service Section (Desktop) */
 .front-page-services {
 	background-image: url('../images/tree-img.png');
 	height: 500px;
 	background-repeat: repeat;
 	background-position: center;
-	padding: 60px 2rem; /* Optional: adjust spacing */
-	color: #fff; /* Optional: make text readable over the image */
+	padding-top: 60px;
+	color: #fff;
 	margin-top: 0;
+}
+
+.services-heading {
+	margin: 0 4rem 2rem;
+}
+
+@media (min-width: 1024px) {
+	.front-page-services {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.services-heading {
+		margin: 0 4rem 5rem;
+	}
 }
 
 @media (min-width: 1440px) {
 	.front-page-services {
 		background-size: cover;
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 }
 
-.services-heading {
-	margin: 0 2rem;
-}
-
+/* Hide static service cards on mobile */
 .services-cards {
 	display: none;
 }
 
-@media (min-width: 1440px) {
+/* Show Swiper on mobile */
+.service-list {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	.service-list {
+		display: block; /* Show swiper on mobile */
+		z-index: 3; /* Ensure swiper is on top of the background */
+	}
+
+	/* Ensure swiper is inside the background */
+	.swiper-home {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+/* Static service cards (Desktop Only) */
+@media (min-width: 1024px) {
 	.services-cards {
-		margin-top: 3rem;
 		display: flex;
 		justify-content: center;
 		flex-direction: row;
-		flex: 1 1 300px; /* allows cards to shrink and grow */
+		flex: 1 1 300px;
 		gap: 1rem;
+		height: 250px;
+	}
+
+	.service-card:nth-child(odd) {
+		transform: translateY(2rem);
+	}
+
+	.service-card:nth-child(even) {
+		transform: translateY(-2rem);
+	}
+
+	.mobile-services-swiper {
+		display: none; /* Hide swiper on desktop */
 	}
 }
 
@@ -225,4 +271,96 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 300px;
+}
+
+.swiper-slide > .service-card {
+	margin: 0 auto;
+	width: 200px;
+	height: 250px;
+}
+
+.service-card > a,
+.service-card .arrow {
+	text-decoration: none;
+	color: #174f21;
+	font-weight: bold;
+}
+
+/* contact section */
+.front-page-contact {
+	background-color: #f8f9fa;
+	/* padding: 4rem 1rem; */
+}
+
+.contact-container {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 2rem;
+}
+
+.front-page-contact h2 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
+	color: #333;
+}
+
+.contact-container form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.contact-container label {
+	font-weight: 600;
+	color: #444;
+}
+
+.contact-container input,
+.contact-container textarea {
+	padding: 0.75rem 1rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 1rem;
+	width: 100%;
+	resize: vertical;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+	outline: none;
+	border-color: #fcb900;
+	box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
+}
+
+.contact-container input[type='submit'] {
+	background-color: #fcb900;
+	color: #000000;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background-color 0.3s;
+}
+
+.contact-container input[type='submit']:hover {
+	background-color: #005fa3;
+}
+
+.contact-message {
+	text-align: center;
+	margin-top: 1rem;
+	color: #28a745;
+	font-weight: 600;
+}
+
+.contact-bg-container {
+	background-color: #f8f9fa; /* Or match your site's theme */
+	background-image: url('../images/grass-img.png'); /* Update the path as needed */
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: contain;
+	padding: 4rem 1rem 6rem; /* Extra bottom padding for the grass image */
 }
