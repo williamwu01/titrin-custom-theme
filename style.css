@@ -1153,3 +1153,104 @@ textarea {
 .page .entry-title {
 	display: none;
 }
+
+/* single-blog page */
+.wp-singular .post-thumbnail img {
+	display: none;
+}
+
+/* pages header */
+.page-id-23 .wp-block-cover .wp-block-cover__inner-container,
+.page-id-6 .wp-block-cover .wp-block-cover__inner-container,
+.page-id-33 .wp-block-cover .wp-block-cover__inner-container,
+.page-id-30 .wp-block-cover .wp-block-cover__inner-container {
+	margin-left: 4rem;
+}
+
+/* about-page */
+.page-id-23 #page {
+	background-color: #111;
+}
+.page-id-23 .about-text-section .wp-block-group__inner-container p {
+	color: #fff;
+}
+
+.about-content .wp-block-group__inner-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 1rem;
+}
+
+.about-content .wp-block-group__inner-container .about-image {
+	margin: 2rem auto 0;
+}
+
+.about-text-section .wp-block-group__inner-container {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+@media (min-width: 769px) {
+	.about-content .wp-block-group__inner-container {
+		flex-direction: row;
+		margin: 2rem;
+		max-width: 1000px;
+	}
+	.about-content .wp-block-group__inner-container .about-image {
+		margin: auto;
+	}
+
+	.about-text-section .wp-block-group__inner-container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media (min-width: 1050px) {
+	.about-content .wp-block-group__inner-container {
+		margin: 2rem auto;
+	}
+}
+
+@media (min-width: 1440px) {
+	.about-content .wp-block-group__inner-container {
+		margin: 2rem auto;
+	}
+}
+.page-id-23 .wp-block-group.desc-section {
+	background-color: #f0eeee;
+	color: black;
+	padding: 2rem 0;
+	max-width: 1400px;
+	margin: 0 auto;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 100px;
+}
+.page-id-23 .wp-block-group__inner-container p {
+	color: black;
+}
+
+.page-id-23 .wp-block-group.desc-section .wp-block-group__inner-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.page-id-23 .wp-block-group.desc-section .wp-block-group__inner-container .has-text-align-center {
+	max-width: 800px;
+	margin: 0 auto;
+	line-height: 2;
+}
+
+.entry-footer {
+	display: none;
+}
+
+/* service page */
