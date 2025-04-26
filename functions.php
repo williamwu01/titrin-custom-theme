@@ -167,13 +167,27 @@ function titrin_scripts() {
 		}
 }
 add_action( 'wp_enqueue_scripts', 'titrin_scripts' );
+//this is for the blog page css
 function titrin_enqueue_blog_styles() {
 	if ( is_home() && ! is_front_page() ) {
 		wp_enqueue_style( 'titrin-blog-page', get_template_directory_uri() . '/css/blog-page.css', array(), '1.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'titrin_enqueue_blog_styles' );
-
+//this is for the contact page css
+function titrin_enqueue_contact_styles() {
+	if ( is_page_template( 'contact-us.php' ) ) {
+		wp_enqueue_style( 'titrin-contact-page', get_template_directory_uri() . '/css/contact-us.css', array(), '1.0' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'titrin_enqueue_contact_styles' );
+//this is for the services page css
+function titrin_enqueue_services_styles(){
+	if( is_page_template('page-services.php') ){
+		wp_enqueue_style( 'titrin-services-page', get_template_directory_uri() . '/css/service-page.css', array(), '1.0' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'titrin_enqueue_services_styles' );
 function titrin_register_services_post_type() {
 	$labels = array(
 			'name'                  => _x( 'Services', 'Post type general name', 'titrin' ),

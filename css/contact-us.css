@@ -1,0 +1,72 @@
+.contact-container {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 2rem;
+}
+
+.front-page-contact h2 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
+	color: #333;
+}
+
+.contact-container form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.contact-container label {
+	font-weight: 600;
+	color: #444;
+}
+
+.contact-container input,
+.contact-container textarea {
+	padding: 0.75rem 1rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 1rem;
+	width: 100%;
+	resize: vertical;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+	outline: none;
+	border-color: #fcb900;
+	box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
+}
+
+.contact-container input[type='submit'] {
+	background-color: #fcb900;
+	color: #000000;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background-color 0.3s;
+}
+
+.contact-container input[type='submit']:hover {
+	background-color: #005fa3;
+}
+
+.contact-message {
+	text-align: center;
+	margin-top: 1rem;
+	color: #28a745;
+	font-weight: 600;
+}
+
+.contact-bg-container {
+	background-color: #f8f9fa; /* Or match your site's theme */
+	background-image: url('../images/grass-img.png'); /* Update the path as needed */
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: contain;
+	padding: 4rem 1rem 6rem; /* Extra bottom padding for the grass image */
+}

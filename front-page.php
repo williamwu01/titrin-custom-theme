@@ -12,6 +12,20 @@ get_header();
 
 	<?php while (have_posts()): the_post(); ?>
 		<div class="front-page-content">
+			<div class="front-page-badges">
+				<div class="front-page-badge">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/badge-icon.png" alt="badge">
+					<p class="badge-text">Expertise in ALR & Soil Regulations</p>
+				</div>
+				<div class="front-page-badge">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/badge-icon.png" alt="badge">
+					<p class="badge-text">Hands-on Experience with Municipal & Provincial Processes</p>
+				</div>
+				<div class="front-page-badge">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/badge-icon.png" alt="badge">
+					<p class="badge-text">Efficient, Field-Tested Problem Solving</p>
+				</div>
+			</div>
 			<?php the_content(); ?>
 		</div>
 		<?php

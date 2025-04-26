@@ -16,6 +16,55 @@
 	z-index: 1;
 }
 
+/* badge on desktop */
+.front-page-badges {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	.front-page-content {
+		position: relative;
+	}
+
+	.front-page-badges {
+		z-index: 1000;
+		position: absolute;
+		top: 6rem;
+		right: 5%;
+		display: flex;
+		flex-direction: column;
+	}
+	.front-page-badge {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		max-width: 400px;
+		gap: 0.5rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	.front-page-content {
+		position: relative;
+	}
+
+	.front-page-badges {
+		z-index: 1000;
+		position: absolute;
+		top: 6rem;
+		right: 5%;
+		display: flex;
+		flex-direction: column;
+	}
+	.front-page-badge {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		max-width: 400px;
+		gap: 0.5rem;
+	}
+}
+
 .page-id-2 .wp-block-cover__inner-container {
 	display: flex;
 	flex-direction: column;
