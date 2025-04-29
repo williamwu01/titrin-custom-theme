@@ -1,0 +1,36 @@
+.entry-title {
+	display: none;
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+	margin-left: 4rem;
+}
+
+.single-service .text-box .wp-block-group__inner-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+/* desciption text and cta section */
+.single-service .wp-block-group.desc-section {
+	background-color: #000000;
+	color: white;
+	padding: 2rem 0;
+}
+
+.single-service .wp-block-group.desc-section .wp-block-group__inner-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.single-service .wp-block-group.desc-section .wp-block-group__inner-container .has-text-align-center {
+	max-width: 800px;
+	margin: 0 auto;
+	line-height: 2;
+}

@@ -70,3 +70,38 @@
 	background-size: contain;
 	padding: 4rem 1rem 6rem; /* Extra bottom padding for the grass image */
 }
+
+.contact-bg-container h1,
+.contact-bg-container p {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	color: #333;
+}
+
+.amelia-app-booking #amelia-booking-wrap #am-step-booking .am-select-date,
+.amelia-app-booking #amelia-booking-wrap .am-step-booking-catalog .am-select-date {
+	background: linear-gradient(135deg, #4d922b, #265012) !important;
+}
+
+.amelia-app-booking
+	#amelia-booking-wrap
+	#am-step-booking
+	.am-select-date
+	.am-appointment-times
+	.el-radio-button
+	.el-radio-button__orig-radio:checked
+	+ .el-radio-button__inner,
+.amelia-app-booking
+	#amelia-booking-wrap
+	.am-step-booking-catalog
+	.am-select-date
+	.am-appointment-times
+	.el-radio-button
+	.el-radio-button__orig-radio:checked
+	+ .el-radio-button__inner {
+	color: #000000 !important;
+}
+
+.am-lite-footer {
+	display: none !important;
+}

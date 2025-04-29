@@ -165,6 +165,11 @@ function titrin_scripts() {
 			wp_enqueue_script('swiper-scripts', get_template_directory_uri() . '/js/swiper-bundle.min.js', array(), '11.0.6', array('strategy' => 'defer'));
 			wp_enqueue_script('swiper-settings', get_template_directory_uri() . '/js/swiper-settings.js', array('swiper-scripts'), _S_VERSION, array('strategy' => 'defer'));
 		}
+
+		// enqueue stylesheet for single blog posts 
+		if ( is_single () && get_post_type() == 'post' ) {
+			wp_enqueue_style( 'titrin-single-post', get_template_directory_uri() . '/css/single-blog.css', array(), '1.0' );
+		}
 }
 add_action( 'wp_enqueue_scripts', 'titrin_scripts' );
 //this is for the blog page css
@@ -188,6 +193,15 @@ function titrin_enqueue_services_styles(){
 	}
 }
 add_action( 'wp_enqueue_scripts', 'titrin_enqueue_services_styles' );
+
+// this is for the single service page css
+function titrin_enqueue_service_styles(){
+	if( is_singular('service') ){
+		wp_enqueue_style( 'titrin-service-page', get_template_directory_uri() . '/css/single-service.css', array(), '1.0' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'titrin_enqueue_service_styles' );
+
 function titrin_register_services_post_type() {
 	$labels = array(
 			'name'                  => _x( 'Services', 'Post type general name', 'titrin' ),
@@ -230,6 +244,11 @@ function titrin_register_services_post_type() {
 	register_post_type( 'service', $args );
 }
 add_action( 'init', 'titrin_register_services_post_type' );
+
+function titrin_custom_excerpt_length( $length ) {
+	return 20; // Change 20 to however many words you want
+}
+add_filter( 'excerpt_length', 'titrin_custom_excerpt_length' );
 
 /**
  * Implement the Custom Header feature.

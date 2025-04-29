@@ -15,11 +15,7 @@ get_header(); ?>
             </header><!-- .entry-header -->
 
             <div class="entry-content">
-                <?php if ( has_post_thumbnail() ) : ?>
-                    <div class="service-thumbnail">
-                        <?php the_post_thumbnail( 'large' ); ?>
-                    </div>
-                <?php endif; ?>
+
 
                 <?php the_content(); ?>
 

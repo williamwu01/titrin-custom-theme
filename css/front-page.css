@@ -51,8 +51,30 @@
 	.front-page-badges {
 		z-index: 1000;
 		position: absolute;
-		top: 6rem;
+		top: 10rem;
 		right: 5%;
+		display: flex;
+		flex-direction: column;
+	}
+	.front-page-badge {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		max-width: 400px;
+		gap: 0.5rem;
+	}
+}
+
+@media (min-width: 1800px) {
+	.front-page-content {
+		position: relative;
+	}
+
+	.front-page-badges {
+		z-index: 1000;
+		position: absolute;
+		top: 10rem;
+		right: 10%;
 		display: flex;
 		flex-direction: column;
 	}

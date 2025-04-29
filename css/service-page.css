@@ -1,7 +1,7 @@
 /* Services Page Main Container */
 .services-page {
-	background-color: #000; /* black background */
-	padding: 4rem 2rem;
+	/* background-color: #000;  */
+	/* padding: 4rem 2rem; */
 	color: #fff;
 }
 
@@ -11,6 +11,7 @@
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 2rem;
 	margin-top: 2rem;
+	padding: 4rem 2rem;
 }
 
 /* Individual service card */
@@ -53,4 +54,26 @@
 nav.navigation.pagination {
 	margin-top: 2rem;
 	text-align: center;
+}
+
+.page-id-30 .wp-block-group.desc-section {
+	background-color: #174f21;
+	color: white;
+	padding: 2rem 0;
+}
+
+.page-id-30 .wp-block-group.desc-section .wp-block-group__inner-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.page-id-30 .wp-block-group.desc-section .wp-block-group__inner-container .has-text-align-center {
+	max-width: 800px;
+	margin: 0 auto;
+	line-height: 2;
 }

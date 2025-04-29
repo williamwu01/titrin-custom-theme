@@ -15,8 +15,9 @@ get_header();
 		?>
 	</div>
 	<div class="contact-bg-container">
+		<h1>Have Questions?</h1>
+		<p>Send us a message by filling out this form and we will be in contact with you.</p>
 		<div class="contact-container">
-			
 			<form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
 				<label for="cf-name">Name</label>
 				<input type="text" id="cf-name" name="cf-name" required>
@@ -53,6 +54,10 @@ get_header();
 			}
 			?>
 		</div>
+		<section class="booking-section">
+    <h2>Book a Consultation</h2>
+    <?php echo do_shortcode('[ameliabooking service=1]'); ?>
+</section>
 	</div>
 </section>
 <?php get_footer(); ?>

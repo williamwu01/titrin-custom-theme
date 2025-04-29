@@ -49,7 +49,7 @@ get_header(); ?>
                         <?php endif; ?>
 
                         <h2 class="service-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <?php the_title(); ?>
                         </h2>
 
                         <div class="service-excerpt">

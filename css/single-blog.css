@@ -1,0 +1,21 @@
+.site-main article {
+	margin-top: 3rem;
+	padding: 2rem;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.site-main article a {
+	color: green;
+}
+
+.site-main .nav-links {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.site-main .nav-links .nav-previous a,
+.site-main .nav-links .nav-next a {
+	color: green;
+}
