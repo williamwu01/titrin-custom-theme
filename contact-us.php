@@ -28,7 +28,7 @@ get_header();
 				<label for="cf-phone">Phone</label>
 				<input type="tel" id="cf-phone" name="cf-phone">
 
-				<label for="cf-message">Message</label>
+				<label for="cf-message">Project Proposal</label>
 				<textarea id="cf-message" name="cf-message" required></textarea>
 
 				<input type="submit" name="cf-submitted" value="Send">

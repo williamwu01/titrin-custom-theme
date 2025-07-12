@@ -12,7 +12,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
+	background: #00000080;
 	z-index: 1;
 }
 
@@ -257,10 +257,11 @@
 
 /* Service Section (Desktop) */
 .front-page-services {
-	background-image: url('../images/tree-img.png');
+	background-image: url('../images/tree-img.jpg');
 	height: 500px;
-	background-repeat: repeat;
+	background-repeat: no-repeat;
 	background-position: center;
+	background-size: cover;
 	padding-top: 60px;
 	color: #fff;
 	margin-top: 0;
@@ -337,8 +338,8 @@
 }
 
 .service-card {
-	background-color: #e6e6e6ac;
-	color: #000;
+	background-color: #00000080;
+	color: white;
 	padding: 2rem;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -360,7 +361,7 @@
 .service-card > a,
 .service-card .arrow {
 	text-decoration: none;
-	color: #174f21;
+	color: #fcb900;
 	font-weight: bold;
 }
 
